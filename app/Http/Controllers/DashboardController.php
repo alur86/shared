@@ -23,13 +23,6 @@ return view('dashboard.index')->with('notes',$notes)->with('shared_notes',$share
 }
 
 
-public function show($id) {
-
-$note = Note::findOrFail($id);
-  
-return view('dashboard.show')->with('note',$note);
-
-}
 
 public function search(SearchNote $request) {
 
@@ -63,6 +56,9 @@ $note = Note::findOrFail($note_id);
 return view('dashboard.add_shared2')->with('note',$note);
 
 }
+
+
+
 
 public function postSharedLink1(SharedLink1 $request) {
 

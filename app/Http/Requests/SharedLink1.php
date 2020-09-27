@@ -25,7 +25,6 @@ class SharedLink1 extends FormRequest
     {
         return [
             
-           
              'title' => 'required |min:3|max:150',
              'link' => 'required |url',     
 

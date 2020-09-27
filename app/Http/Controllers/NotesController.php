@@ -42,9 +42,11 @@ class NotesController extends Controller
      }
 
 
-      public function edit($id) {  
+      public function edit($id) {
+
       $note = Note::findOrFail($id);
       return view('notes.edit_note')->with('note',$note);
+      
       }
 
 
@@ -83,17 +85,10 @@ class NotesController extends Controller
  
 
 
-       public function show($id) {
+  
 
-       $note = Note::findOrFail($id);
-       return view('notes.show')->with('note',$note);
+  public function shared_list() {
 
-      }
-
-
-
-
-       public function shared_list() {
        $id = Auth::id();
        $shared_notes = DB::select( DB::raw("SELECT * FROM notes WHERE is_shared = 1 AND user_id =".$id) );
        return view('notes.shared_list')->with('shared_notes',$shared_notes);

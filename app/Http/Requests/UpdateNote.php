@@ -24,6 +24,7 @@ class UpdateNote extends FormRequest
     public function rules()
     {
         return [
+        
              'is_public' => 'required',
              'title' => 'required |min:3|max:150',
              'link' => 'required |url', 
